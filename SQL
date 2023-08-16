@@ -1,0 +1,55 @@
+This file contains all the SQL queries that must be run after connecting the database with application
+
+**FILE 1
+create database universitymanagement;  
+
+show databases;
+use universitymanagement;
+select * from Teacher;
+create table login(username varchar(30),password varchar(30));
+insert into login values('admin','12345');
+select * from login;
+create table StudentLeave(rollno varchar(30),date varchar(50),duration varchar(23));
+select * from StudentLeave;
+
+create table TeacherLeave(rollno varchar(30),date varchar(50),duration varchar(23));
+select * from StudentLeave;
+create table subject(rollno varchar(20),semester varchar(30),subject1 varchar(50),subject2 varchar(50),subject3 varchar(50),subject4 varchar(50),subject5 varchar(50));
+
+create table marks(rollno varchar(20),semester varchar(30),marks1 varchar(50),marks2 varchar(50),marks3 varchar(50),marks4 varchar(50),marks5 varchar(50));
+
+select * from subject;
+select * from marks;
+
+
+**FILE 2
+
+show databases;
+
+use universitymanagement;
+
+create table Student(name varchar(35),fname varchar(40),rollno varchar(20),dob varchar(40),address varchar(80),phone varchar(30),email varchar(30),class_x varchar(20),class_xii varchar(20),aadhar varchar(40),course varchar(50),branch varchar(70));
+
+select * from Student;
+
+create table Teacher(name varchar(35),fname varchar(40),empId varchar(20),dob varchar(40),address varchar(80),phone varchar(30),email varchar(30),class_x varchar(20),class_xii varchar(20),aadhar varchar(40),qulaification varchar(50),department varchar(70));
+
+create table fee(course varchar(30),semester1 varchar(20),semester2 varchar(20),semester3 varchar(20),semester4 varchar(20),semester5 varchar(20),semester6 varchar(20),semester7 varchar(20),semester8 varchar(20));
+insert into fee values("B.E",150000,150000,150000,150000,150000,150000,150000,150000);
+insert into fee values("BTech",15000,15000,15000,15000,15000,15000,15000,15000);
+insert into fee values("B.Sc",5000,5000,5000,5000,5000,5000,5000,5000);
+insert into fee values("BCA",35000,35000,35000,35000,35000,35000,35000,35000);
+
+create table FeesStructure(course varchar(30),semester1 varchar(20),semester2 varchar(20),semester3 varchar(20),semester4 varchar(20),semester5 varchar(20),semester6 varchar(20),semester7 varchar(20),semester8 varchar(20));
+insert into FeesStructure values("B.E",150000,150000,150000,150000,150000,150000,150000,150000);
+insert into FeesStructure values("BTech",15000,15000,15000,15000,15000,15000,15000,15000);
+insert into FeesStructure values("B.Sc",5000,5000,5000,5000,5000,5000,"","");
+insert into FeesStructure values("BCA",35000,35000,35000,35000,35000,35000,"","");
+insert into FeesStructure values("MCA",55000,55000,55000,55000,"","","","");
+insert into FeesStructure values("MSc",15000,15000,15000,15000,"","","","");
+insert into FeesStructure values("MTech",85000,85000,85000,85000,"","","","");
+insert into FeesStructure values("Bcom",25000,25000,25000,25000,"","","","");
+
+
+select * from FeesStructure;
+create table collegefee(rollno varchar(20),course varchar(20),branch varchar(20),semester varchar(20),total varchar(20));
